@@ -1,0 +1,26 @@
+{
+  "name": "brasilhomeoffice-youtube-website",
+  "profile": "giovanneafonso",
+  "regions": ["us-east-1"],
+  "lambda": {
+    "memory": 256,
+    "runtime": "nodejs12.x"
+  },
+  "proxy": {
+    "command": "npm start",
+    "timeout": 25,
+    "listen_timeout": 15,
+    "shutdown_timeout": 15
+  },
+  "stages": {
+    "production": {
+      "domain": "reactparatrabalho.com"
+    }
+  },
+  "environment": {},
+  "error_pages": {
+    "variables": {
+      "support_email": "giovanneafonso@gmail.com"
+    }
+  }
+}
