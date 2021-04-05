@@ -9,7 +9,7 @@ export default function Home() {
         vtitle="Brasil Home Office - Quem somos"
         vdescription="@TODO ~ escrever description para este primeiro vídeo. OBS: Considerar uso de md"
       >
-        conteúdo
+        conteúdoxx
       </VideoPage>
     </div>
   )
