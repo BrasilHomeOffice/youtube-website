@@ -44,7 +44,7 @@ $page-maxw: 800px;
 
 .content {
   @media (min-width:$lg-minw) {
-    grid-column: 1;
+    grid-column: 1 / 3;
     grid-row: 2;
   }
 }

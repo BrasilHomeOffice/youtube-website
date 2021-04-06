@@ -20,7 +20,7 @@ export default function Home() {
 
         <ul className={styles.listOfVideos}>
           <li>
-            <a href="#">Apresentação - O que é Brasil Home Office</a>
+            <a href="#">O que é Brasil Home Office</a>
           </li>
           <li>
             <a href="#">Que profissões Home Office existem?!</a>
@@ -32,10 +32,13 @@ export default function Home() {
             <a href="#">Como criar uma empresa home office</a>
           </li>
           <li>
-            <a href="#">Programador - Profissão Home Office</a>
+            <a href="#">Pilares Fundamentais: E-commerce (Lojas Virtuais)</a>
           </li>
           <li>
-            <a href="#">Editor de Vĩdeo - Profissão Home Office</a>
+            <a href="#">Pilares Fundamentais: Programadores</a>
+          </li>
+          <li>
+            <a href="#">Pilares Fundamentais: Editores de Vídeos</a>
           </li>
         </ul>
       </main>

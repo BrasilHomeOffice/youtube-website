@@ -1,0 +1,32 @@
+.container {
+  display: block;
+  width: 100%;
+  transition: .3s;
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 5px;
+  background: #fff;
+  text-decoration: none;
+
+  &:hover, &:focus {
+    transform: scale(1.1);
+  }
+}
+
+.thumbnail {
+  display: block;
+  width: 100%;
+  padding-top: 56.25%;
+  margin-bottom: 5px;
+  background-size: cover;
+  background-position: center;
+}
+
+.title {
+  margin: 0;
+  padding: 0;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}

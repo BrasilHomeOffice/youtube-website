@@ -1,23 +1,22 @@
 import Head from 'next/head'
 import styles from './VideoThumbnailLink.module.scss'
 
-export default function VideoThumbnailLink({ vtitle, vdescription, children }) {
+export default function VideoThumbnailLink({ title, description, image }) {
   return (
-    <div className={styles.container}>
-      <div className={styles.layout}>
-        <div className={styles.videoPlayer}>
-          <VideoPlayer
-            title={vtitle}
-            description={vdescription}
-          />
-        </div>
-        <div className={styles.sidebar}>
-          sidebar
-        </div>
-        <div className={styles.content}>
-          {children}
-        </div>
-      </div>
-    </div>
+    <a
+      href="#"
+      className={styles.container}
+      title={description}
+    >
+      <span
+        className={styles.thumbnail}
+        style={{
+          backgroundImage: `url('${image}')`
+        }}
+      ></span>
+      <h4 className={styles.title}>
+        {title}
+      </h4>
+    </a>
   )
 }
