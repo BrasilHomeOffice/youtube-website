@@ -20,18 +20,18 @@ module.exports = [
     sttTime: 3,
     sttWork: 3,
   },
-  // {
-  //   title: 'Cozinheiro',
-  //   image: 'https://www.rj.senac.br/wp-content/uploads/2017/06/chef-executivo-de-cozinha-2.jpg',
-  //   sttHard: 3,
-  //   sttTime: 3,
-  //   sttWork: 3,
-  // },
-  // {
-  //   title: 'Assistente Tecnológico',
-  //   image: 'https://st3.depositphotos.com/8810948/15667/i/1600/depositphotos_156670940-stock-photo-retired-old-men-learn-new.jpg',
-  //   sttHard: 3,
-  //   sttTime: 3,
-  //   sttWork: 3,
-  // },
+  {
+    title: 'Cozinheiro',
+    image: 'https://www.rj.senac.br/wp-content/uploads/2017/06/chef-executivo-de-cozinha-2.jpg',
+    sttHard: 3,
+    sttTime: 3,
+    sttWork: 3,
+  },
+  {
+    title: 'Assistente Tecnológico',
+    image: 'https://st3.depositphotos.com/8810948/15667/i/1600/depositphotos_156670940-stock-photo-retired-old-men-learn-new.jpg',
+    sttHard: 3,
+    sttTime: 3,
+    sttWork: 3,
+  },
 ];
