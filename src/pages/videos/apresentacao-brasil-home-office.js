@@ -2,6 +2,7 @@ import Head from 'next/head'
 import VideoPage from '../../components/VideoPage/VideoPage'
 import RelatedVideos from '../../components/RelatedVideos/RelatedVideos'
 import styles from '../../styles/videos/apresentacao-brasil-home-office.module.scss'
+import CareerCards from '../../components/CareerCards/CareerCards';
 
 // @WIP
 function ytUrl(id) {
@@ -38,6 +39,7 @@ export default function Home() {
         vtitle="Brasil Home Office - Quem somos"
         vdescription="@TODO ~ escrever description para este primeiro vídeo. OBS: Considerar uso de md"
       >
+        <CareerCards />
         <RelatedVideos
           videos={relatedVideos}
         />

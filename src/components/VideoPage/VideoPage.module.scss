@@ -2,7 +2,7 @@
 $lg-minw: 1000px;
 
 // Page size
-$page-maxw: 800px;
+$page-maxw: 950px;
 
 .container {
   margin: auto;
@@ -13,8 +13,8 @@ $page-maxw: 800px;
 .layout {
   @media (min-width:$lg-minw) {
     display: grid;
-    grid-gap: 10px;
-    grid-template-columns: 30% 40% 30%;
+    grid-gap: 30px;
+    grid-template-columns: 35% 35% 30%;
     grid-template-rows: max-content min-content;
     background-color: #fff;
     color: #444;
@@ -37,7 +37,7 @@ $page-maxw: 800px;
   background: #ccc;
   
   @media (min-width:$lg-minw) {
-    grid-column: 3;
+    grid-column: 3/4;
     grid-row: 1 / span 2;
   }
 }

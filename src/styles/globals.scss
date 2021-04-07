@@ -10,10 +10,11 @@ $aColor: #37c;
 
 a {
   color: $aColor;
-  text-decoration: underline;
+  text-decoration: none;
   transition: .3s;
 
   &:hover, &:focus {
+    text-decoration: underline;
     color: darken($aColor, 20%);
   }
 }
@@ -23,5 +24,5 @@ a {
 }
 
 h3 {
-  font-size: 16px;
+  font-size: 20px;
 }

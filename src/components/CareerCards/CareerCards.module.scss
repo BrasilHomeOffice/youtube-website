@@ -1,0 +1,18 @@
+.container {
+  margin-bottom: 4rem;
+}
+
+.grid {
+  display: grid;
+  gap: 10px;
+  //grid-auto-flow: column;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.thumbWrapper {
+}
+
+.moreLink {
+  float: right;
+  margin-top: 2px;
+}
