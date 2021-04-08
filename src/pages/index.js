@@ -20,7 +20,7 @@ export default function Home() {
 
         <ul className={styles.listOfVideos}>
           <li>
-            <a href="#">O que é Brasil Home Office</a>
+            <a href="/videos/apresentacao-brasil-home-office">O que é Brasil Home Office</a>
           </li>
           <li>
             <a href="#">Que profissões Home Office existem?!</a>

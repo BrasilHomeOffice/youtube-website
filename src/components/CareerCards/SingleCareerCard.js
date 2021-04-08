@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import styles from './SingleCareerCard.module.scss'
 
-export default function SingleCareerCard({ title, description, image }) {
+export default function SingleCareerCard({ title, description, image, link }) {
   return (
     <a
-      href="#"
+      href={link}
       className={styles.container}
       title={description}
     >

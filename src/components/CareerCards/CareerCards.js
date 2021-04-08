@@ -9,8 +9,15 @@ export default function CareerCards({ full, length = 3 }) {
   return (
     <div className={styles.container}>
 
+      {!!full && (<a
+        href="/"
+        className={styles.moreLink}
+      >
+        Sair
+      </a>)}
+
       {!full && (<a
-        href="#"
+        href="/carreiras-home-office"
         className={styles.moreLink}
       >
         ver todas as profissões &raquo;
@@ -19,12 +26,13 @@ export default function CareerCards({ full, length = 3 }) {
       <h3 className={styles.title}>Profissões Home Office</h3>
       
       <div className={styles.grid}>
-        {_list.map(({ title, description, image }) => (
+        {_list.map(({ slug, title, description, image }) => (
           <div className={styles.thumbWrapper}>
             <SingleCareerCard
               title={title}
               description={description}
               image={image}
+              link={`/carreiras-home-office/${slug}`}
             />
           </div>
         ))}
