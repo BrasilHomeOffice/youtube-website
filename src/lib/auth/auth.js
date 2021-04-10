@@ -6,15 +6,34 @@ export const useAuth = create(set => ({
   errorMessage: '',
   loggedIn: false,
   accessToken: '',
-  userName: '',
-  userThumbnail: '',
+  user: {
+    id: null,
+    name: '',
+    email: '',
+    gender: '',
+    city: '',
+    country: '',
+    birthday: '',
+    thumbnail: '',
+  },
   setLoading: (loading) => set(state => ({ loading: !!loading })),
+  setUser: (accessToken, user) => set(state => ({ ...state, accessToken, user, loading: false, })),
 }));
 
 export const MUTATION_FACEBOOK_LOGIN = gql`
   mutation FacebookLogin($accessToken: String!, $userID: String!) {
     facebookLogin(accessToken: $accessToken, userID: $userID) {
       accessToken
+      user {
+        id
+        name
+        email
+        gender
+        city
+        country
+        birthday
+        thumbnail
+      }
     }
   }
 `;

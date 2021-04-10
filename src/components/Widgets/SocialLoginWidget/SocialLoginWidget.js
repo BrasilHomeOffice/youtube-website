@@ -1,16 +1,34 @@
+import { useAuth } from '../../../lib/auth/auth';
 import { fbLogin } from '../../PageBase/facebook'
 import styles from './SocialLoginWidget.module.scss'
 
 export default function SocialLoginWidget() {
+  const {
+    loading,
+    error,
+    accessToken,
+    user,
+  } = useAuth();
+
   const loginWithFacebook = () => {
     alert('poar');
     fbLogin();
   }
 
-  return (
-    <section className={styles.wrapper}>
-      <h3 className={styles.title}>Minha Conta</h3>
+  let content = false;
 
+  if (loading) {
+    content = (<div>Carregando...</div>);
+  } else if(error) {
+    content = (<div>{String(error)}</div>);
+  } else if(user.id) {
+    content = (
+      <div>
+        <pre>{JSON.stringify(user, null, 2)}</pre>
+      </div>
+    )
+  } else {
+    content = (
       <div
         className="fb-login-button"
         data-width="250"
@@ -21,6 +39,14 @@ export default function SocialLoginWidget() {
         data-use-continue-as="true"
         onClick={loginWithFacebook}
       ></div>
+    );
+  }
+
+  return (
+    <section className={styles.wrapper}>
+      <h3 className={styles.title}>Minha Conta</h3>
+
+      {content}
     </section>
   )
 }

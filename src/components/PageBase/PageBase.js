@@ -6,19 +6,14 @@ import { MUTATION_FACEBOOK_LOGIN, useAuth } from '../../lib/auth/auth';
 import { useMutation } from '@apollo/client';
 
 export default function PageBase({ children }) {
-  const [
-    // loading,
-    errorMessage,
+  const {
     setLoading,
-  ] = useAuth(state => [
-    state.loading,
-    state.errorMessage,
-    state.setLoading
-  ]);
-  const [facebookLogin, { data, error, loading }] = useMutation(MUTATION_FACEBOOK_LOGIN);
+    setUser,
+   } = useAuth();
+  const [facebookLogin, { error, loading }] = useMutation(MUTATION_FACEBOOK_LOGIN);
 
   useEffect(() => {
-    // setLoading(true);
+    setLoading(true);
     // Check if user is logged in on Facebook
     // https://developers.facebook.com/docs/facebook-login/web#checklogin
     fbInit()
@@ -26,13 +21,22 @@ export default function PageBase({ children }) {
         if (status === 'connected') {
           console.log('logged in as ', userID, accessToken);
           try {
-            await facebookLogin(
+            const res = await facebookLogin(
               { variables: { accessToken, userID }},
+            );
+
+            const facebookLoginRes = res.data.facebookLogin;
+
+            setUser(
+              facebookLoginRes.accessToken,
+              facebookLoginRes.user,
             );
           } catch(error) {
             console.log('cheguey');
           }
         }
+
+        setLoading(false);
       })
       .catch(error => {
         // @TODO

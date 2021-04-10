@@ -87,7 +87,7 @@ function _fbRefreshLoggedUser() {
  * 
  */
 export function fbLogin() {
-  FB.login(checkLoginStatus, {scope : 'public_profile,email'});
+  FB.login(checkLoginStatus, {scope : 'public_profile,email,user_gender,user_hometown,user_birthday'});
 }
 
 // Check the result of the user status and display login button if necessary
