@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 import create from 'zustand';
 
 export const useAuth = create(set => ({
-  loading: true,
+  loading: false,
   errorMessage: '',
   loggedIn: false,
   accessToken: '',

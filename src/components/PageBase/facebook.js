@@ -21,42 +21,50 @@
  * 
  */
 
+const _config = {
+  init: false,
+};
+
 export function fbInit() {
   return new Promise((resolve, reject) => {
-    window.fbAsyncInit = function() {
-      window.FB.init({
-        appId      : '3094736140806182',
-        cookie     : true,
-        xfbml      : true,
-        version    : 'v2.7'
-      });
+    if (!_config.init) {
+      window.fbAsyncInit = function() {
+        window.FB.init({
+          appId      : '3094736140806182',
+          cookie     : true,
+          xfbml      : true,
+          version    : 'v2.7'
+        });
+
+        setTimeout(() => resolve(), 1500);
       
-      /**
-       * Get the current login status
-       * 
-       * Schema:
-       * https://developers.facebook.com/docs/facebook-login/web#checklogin
-       * { status, authResponse: {
-       *   accessToken, userID,                 // important fields
-       *   signedRequest,                       // @QUESTION ~ what is this field?
-       *   expiresIn, reauthorize_required_in,  // other
-       * }}
-       */
-      window.FB.getLoginStatus(function(response) {
-        resolve(response);
-      });
-      // _fbRefreshLoggedUser();
+        /**
+         * Get the current login status
+         * 
+         * Schema:
+         * https://developers.facebook.com/docs/facebook-login/web#checklogin
+         * { status, authResponse: {
+         *   accessToken, userID,                 // important fields
+         *   signedRequest,                       // @QUESTION ~ what is this field?
+         *   expiresIn, reauthorize_required_in,  // other
+         * }}
+         */
+        // window.FB.getLoginStatus(function(response) {
+        //   resolve(response);
+        // });
+        // window.FB.AppEvents.logPageView();
+      };
 
-      window.FB.AppEvents.logPageView();
-    };
-
-    (function(d, s, id){
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) {return;}
-      js = d.createElement(s); js.id = id;
-      js.src = "https://connect.facebook.net/en_US/sdk.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
+      (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    } else {
+      resolve();
+    }
   });
 }
 
@@ -87,18 +95,11 @@ function _fbRefreshLoggedUser() {
  * 
  */
 export function fbLogin() {
-  FB.login(checkLoginStatus, {scope : 'public_profile,email,user_gender,user_hometown,user_birthday'});
-}
-
-// Check the result of the user status and display login button if necessary
-function checkLoginStatus(response) {
-  if(response && response.status == 'connected') {
-    console.log('User is authorized', response);
-
-  } else if (response.status === 'not_authorized') {
-    console.log('User is not_authorized ... ', response);
-
-  } else {
-    console.log('User is not authorized', response);
-  }
+  return new Promise((resolve, reject) => {
+    const scope = 'public_profile,email,user_gender,user_hometown,user_birthday';
+    
+    FB.login((response) => {
+      resolve(response);
+    }, { scope });
+  });
 }
