@@ -20,7 +20,7 @@ app
     //   return app.render(req, res, "/about", req.params);
     // });
     
-    server.use(AWSXRay.express.openSegment("ReactParaTrabalho"));
+    server.use(AWSXRay.express.openSegment("BrasilHomeOfficeYt"));
     server.use('/_next', express.static('_next'));
 
     server.get("*", (req, res) => {

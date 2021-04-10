@@ -18,7 +18,9 @@ export default function VideoPlayer({ title, description }) {
       </div>
       <div className={styles.videoInfo}>
         <h1 className={styles.videoTitle}>{title}</h1>
-        <p className={styles.videoDescription}>{description}</p>
+        {!!description && (
+          <p className={styles.videoDescription}>{description}</p>
+        )}
       </div>
     </div>
   )

@@ -14,7 +14,7 @@
   },
   "stages": {
     "production": {
-      "domain": "youtube.brasilhomeoffice.com"
+      "domain": "brasilhomeoffice.com"
     }
   },
   "environment": {},
