@@ -1,8 +1,4 @@
-// Breakpoints
-$lg-minw: 1000px;
-
-// Page size
-$page-maxw: 950px;
+@import './variables.scss';
 
 .container {
   margin: auto;
@@ -29,16 +25,6 @@ $page-maxw: 950px;
 
   @media (min-width:$lg-minw) {
     grid-column: 1 / span 2;
-  }
-}
-
-.sidebar {
-  height: 550px;
-  background: #ccc;
-  
-  @media (min-width:$lg-minw) {
-    grid-column: 3/4;
-    grid-row: 1 / span 2;
   }
 }
 

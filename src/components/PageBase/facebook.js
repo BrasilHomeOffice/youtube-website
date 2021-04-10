@@ -24,10 +24,10 @@
 export function fbInit() {
   window.fbAsyncInit = function() {
     window.FB.init({
-      appId      : '{your-app-id}',
+      appId      : '3094736140806182',
       cookie     : true,
       xfbml      : true,
-      version    : '{api-version}'
+      version    : 'v2.7'
     });
     
     _fbRefreshLoggedUser();

@@ -1,0 +1,9 @@
+@import '../widgetsBase.scss';
+
+.wrapper {
+  margin-bottom: 2em;
+}
+
+.title {
+  @extend .widgetTitle;
+}
