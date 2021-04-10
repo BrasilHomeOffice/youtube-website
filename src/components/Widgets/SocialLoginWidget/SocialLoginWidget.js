@@ -1,6 +1,12 @@
+import { fbLogin } from '../../PageBase/facebook'
 import styles from './SocialLoginWidget.module.scss'
 
 export default function SocialLoginWidget() {
+  const loginWithFacebook = () => {
+    alert('poar');
+    fbLogin();
+  }
+
   return (
     <section className={styles.wrapper}>
       <h3 className={styles.title}>Minha Conta</h3>
@@ -13,6 +19,7 @@ export default function SocialLoginWidget() {
         data-layout="rounded"
         data-auto-logout-link="false"
         data-use-continue-as="true"
+        onClick={loginWithFacebook}
       ></div>
     </section>
   )

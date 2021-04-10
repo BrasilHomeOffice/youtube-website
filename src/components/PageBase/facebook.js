@@ -63,10 +63,26 @@ function _fbRefreshLoggedUser() {
    * }}
    */
   window.FB.getLoginStatus(function(response) {
-    // @TODO ~ 
+    console.log('_fbRefreshLoggedUser ', response)
   });
 }
 
 /**
  * 
  */
+export function fbLogin() {
+  FB.login(checkLoginStatus, {scope : 'public_profile,email'});
+}
+
+// Check the result of the user status and display login button if necessary
+function checkLoginStatus(response) {
+  if(response && response.status == 'connected') {
+    console.log('User is authorized', response);
+
+  } else if (response.status === 'not_authorized') {
+    console.log('User is not_authorized ... ', response);
+
+  } else {
+    console.log('User is not authorized', response);
+  }
+}

@@ -27,9 +27,8 @@ export default function CareerCards({ full, length = 3 }) {
       
       <div className={styles.grid}>
         {_list.map(({ slug, title, description, image }) => (
-          <div className={styles.thumbWrapper}>
+          <div key={slug} className={styles.thumbWrapper}>
             <SingleCareerCard
-              key={slug}
               title={title}
               description={description}
               image={image}
