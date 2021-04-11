@@ -3,8 +3,14 @@ import styles from './PageVideo.module.scss'
 import VideoPlayer from '../VideoPlayer/VideoPlayer'
 import PageBase from '../PageBase/PageBase'
 import Sidebar from './Sidebar';
+import FacebookComments from '../Social/FacebookComments';
 
-export default function PageVideo({ vtitle, vdescription, children }) {
+export default function PageVideo({
+  vtitle,
+  vdescription,
+  children,
+  uri,
+}) {
   return (
     <PageBase>
       <div className={styles.container}>
@@ -18,6 +24,8 @@ export default function PageVideo({ vtitle, vdescription, children }) {
           <Sidebar />
           <div className={styles.content}>
             {children}
+
+            {!!uri && <FacebookComments uri={uri} />}
           </div>
         </div>
       </div>

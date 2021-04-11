@@ -38,6 +38,7 @@ export default function Home() {
       <PageVideo
         vtitle="Brasil Home Office"
         vdescription=""
+        uri="/videos/apresentacao-brasil-home-office"
       >
         <div className={styles.videoContent}>
           <p>
@@ -59,7 +60,7 @@ export default function Home() {
 
         <CareerCards />
         
-        <RelatedVideos
+        {/* <RelatedVideos
           videos={relatedVideos}
         />
 
@@ -81,7 +82,7 @@ export default function Home() {
           O Brasil Home Office é um projeto pessoal meu,
           com o objetivo de ajudar pessoas que querem
           encontrar uma forma de trabalhar em casa.
-        </p>
+        </p> */}
       </PageVideo>
     </div>
   )
