@@ -91,6 +91,9 @@ export default function PoolWidgetLayout({
               className.push(styles.optionResult);
               if (option.image) className.push(styles.optionResultWithImage);
 
+              let votes = option.votes || 0;
+              if (answerId === option.id) votes++;
+
               return (
                 <div
                   key={option.id}
@@ -107,7 +110,7 @@ export default function PoolWidgetLayout({
                   {option.label}
                   
                   <div className={styles.countVotes}>
-                    {option.votes || 0} votos!
+                    {votes} votos!
                   </div>
                 </div>
               );
