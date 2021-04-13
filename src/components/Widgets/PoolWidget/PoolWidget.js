@@ -1,6 +1,7 @@
 import { gql, useMutation, useQuery } from '@apollo/client';
 import PoolWidgetLayout from './PoolWidget.layout'
 import { useSnackbar } from 'notistack';
+import { useState } from 'react';
 
 const POOL_BY_SLUG = gql`
   query Pool($slug: String!) {
@@ -33,7 +34,11 @@ const MUTATION_ANSWER_POOL = gql`
 `;
 
 export default function PoolWidget({ poolSlug }) {
-  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+  const { enqueueSnackbar } = useSnackbar();
+
+  // @TODO ~ This should be replaced with the answerId
+  // that comes from the api
+  const [answerId, setAnswerId] = useState();
 
   const {
     loading: loadingPool,
@@ -66,6 +71,8 @@ export default function PoolWidget({ poolSlug }) {
           variant: "success",
         }
       );
+      // @TODO ~ remove next line
+      setAnswerId(option.id);
     } catch(error) {
       console.log('onAnswerOption catch: ', error);
       enqueueSnackbar(
@@ -82,6 +89,7 @@ export default function PoolWidget({ poolSlug }) {
       loading={loadingPool || loadingAnswer}
       error={errorPool}
       pool={pool}
+      answerId={answerId}
       onAnswerOption={onAnswerOption}
     />
   )

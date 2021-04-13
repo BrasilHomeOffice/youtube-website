@@ -1,8 +1,9 @@
 @import '../widgetsBase.scss';
 
-.optionButton {
+.optionButton, .optionResult {
   display: block;
   padding: 1em 0;
+  padding-right: .5em;
   // margin-bottom: 1em;
   position: relative;
   width: 100%;
@@ -10,11 +11,14 @@
   text-align: left;
   background: transparent;
   outline: none;
-  cursor: pointer;
   border: 1px solid #bbb;
-  opacity: .6;
   transition: .3s;
   border-radius: 20px;
+}
+
+.optionButton {
+  cursor: pointer;
+  opacity: .6;
 
   &:hover, &:focus, &.currentOptionButton {
     background: #ddd;
@@ -22,11 +26,16 @@
   }
 }
 
+.optionResult {
+  margin-bottom: .5em;
+  background: #ddd;
+}
+
 .currentOptionButton {
   
 }
 
-.optionButtonWithImage {
+.optionButtonWithImage, .optionResultWithImage {
   padding-left: 3.2em;
 }
 
@@ -39,4 +48,9 @@
   background-size: cover;
   background-position: center;
   border-radius: 100%;
+}
+
+.countVotes {
+  margin-top: 1em;
+  font-size: 12px;
 }
