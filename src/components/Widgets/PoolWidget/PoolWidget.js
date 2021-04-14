@@ -1,23 +1,26 @@
 import { gql, useMutation, useQuery } from '@apollo/client';
 import PoolWidgetLayout from './PoolWidget.layout'
 import { useSnackbar } from 'notistack';
-import { useState } from 'react';
 import { useAuth } from '../../../lib/auth/auth';
+import { useEffect } from 'react';
 
 const POOL_BY_SLUG = gql`
   query Pool($slug: String!) {
     poolBySlug(slug: $slug) {
-      id
-      slug
-      title
-      description
-      poolStatus
-      options {
+      userAnswerId
+      pool {
         id
-        image
-        label
-        value
-        votes
+        slug
+        title
+        description
+        poolStatus
+        options {
+          id
+          image
+          label
+          value
+          votes
+        }
       }
     }
   }
@@ -38,26 +41,32 @@ export default function PoolWidget({ poolSlug }) {
   const { enqueueSnackbar } = useSnackbar();
   const isLoggedIn = useAuth(state => !!state.user.id);
 
-  // @TODO ~ This should be replaced with the answerId
-  // that comes from the api
-  const [answerId, setAnswerId] = useState();
-
   const {
     loading: loadingPool,
     error: errorPool,
     data,
+    fetchMore,
   } = useQuery(POOL_BY_SLUG, {
     variables: {
       slug: poolSlug,
     },
   });
 
-  const pool = data && data.poolBySlug;
+  const pool = data && data.poolBySlug && data.poolBySlug.pool;
+  const userAnswerId = data && data.poolBySlug && data.poolBySlug.userAnswerId;
 
   const [answerPool, {
     error: errorAnswer,
     loading: loadingAnswer,
   }] = useMutation(MUTATION_ANSWER_POOL);
+
+  useEffect(() => {
+    fetchMore({
+      variables: {
+        slug: poolSlug,
+      },
+    });
+  }, [isLoggedIn]);
 
   const onAnswerOption = async (option) => {
     if (!isLoggedIn) {
@@ -101,7 +110,7 @@ export default function PoolWidget({ poolSlug }) {
       loading={loadingPool || loadingAnswer}
       error={errorPool}
       pool={pool}
-      answerId={answerId}
+      answerId={userAnswerId}
       onAnswerOption={onAnswerOption}
     />
   )
