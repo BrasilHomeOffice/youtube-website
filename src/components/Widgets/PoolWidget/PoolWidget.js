@@ -2,6 +2,7 @@ import { gql, useMutation, useQuery } from '@apollo/client';
 import PoolWidgetLayout from './PoolWidget.layout'
 import { useSnackbar } from 'notistack';
 import { useState } from 'react';
+import { useAuth } from '../../../lib/auth/auth';
 
 const POOL_BY_SLUG = gql`
   query Pool($slug: String!) {
@@ -35,6 +36,7 @@ const MUTATION_ANSWER_POOL = gql`
 
 export default function PoolWidget({ poolSlug }) {
   const { enqueueSnackbar } = useSnackbar();
+  const isLoggedIn = useAuth(state => !!state.user.id);
 
   // @TODO ~ This should be replaced with the answerId
   // that comes from the api
@@ -58,6 +60,16 @@ export default function PoolWidget({ poolSlug }) {
   }] = useMutation(MUTATION_ANSWER_POOL);
 
   const onAnswerOption = async (option) => {
+    if (!isLoggedIn) {
+      enqueueSnackbar(
+        'Você precisa fazer login com facebook antes de continuar!',
+        {
+          variant: 'warning',
+        },
+      );
+      return;
+    }
+
     try {
       await answerPool({
         variables: {
