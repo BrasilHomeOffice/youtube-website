@@ -1,6 +1,7 @@
 import PageCommon from '../PageCommon/PageCommon'
 import FacebookComments from '../Social/FacebookComments';
 import CareerStats from './CareerStats';
+import CareerUserActions from './CareerUserActions';
 import styles from './PageCareer.module.scss'
 
 export default function PageCareer({
@@ -42,10 +43,20 @@ export default function PageCareer({
       <div className={styles.container}>
         <h2 className={styles.h2Title}>Estatísticas da Profissão</h2>
 
-        <CareerStats stats={profession.stats} />
+        <div className={styles.statsWrapper}>
+          <CareerStats stats={profession.stats} />
+        </div>
 
         <div className={styles.pageCareerContent}>
-          { children }
+          <div className={styles.userActionsWrapper}>
+            <CareerUserActions positionSlug={profession.slug} />
+          </div>
+
+          <div className={styles.pageCareerInnerContent}>
+            { children }
+          </div>
+
+          <div className={styles.clear}>&nbsp;</div>
         </div>
 
         {!!commentsUri && <FacebookComments uri={commentsUri} />}

@@ -8,7 +8,7 @@ export default function CareerStats({
     <div className={styles.container}>
       {stats.map(({ label, value }) => {
         return (
-          <div className={styles.statsItem}>
+          <div key={label} className={styles.statsItem}>
             <div className={styles.label}>{label}</div>
             <div className={styles.value}>{value}</div>
           </div>
