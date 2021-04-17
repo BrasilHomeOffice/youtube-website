@@ -11,31 +11,35 @@ export default function PageCareer({
   commentsUri,
   children,
 }) {
-  return (
-    <PageCommon>
-      <div className={styles.container}>
-        <div className={styles.header}>
-          <div
-            className={styles.bgImage}
-            style={{
-              backgroundImage: `url('${bgImageUrl}')`
-            }}
-          ></div>
-          <div className={styles.bgOverlay}>
-            <SvgBgOverlay />
-          </div>
-          <div className={styles.headerContent}>
-            <div className={styles.bgHeaderContent}>
-              <SvgBgContent />
-            </div>
-            <div className={styles.headerContentInner}>
-              <div className={styles.title}>
-                {title}
-              </div>
-            </div>
+  const banner = (
+    <div className={styles.header}>
+      <div
+        className={styles.bgImage}
+        style={{
+          backgroundImage: `url('${bgImageUrl}')`
+        }}
+      ></div>
+      <div className={styles.bgOverlay}>
+        <SvgBgOverlay />
+      </div>
+      <div className={styles.headerContent}>
+        <div className={styles.bgHeaderContent}>
+          <SvgBgContent />
+        </div>
+        <div className={styles.headerContentInner}>
+          <div className={styles.title}>
+            {title}
           </div>
         </div>
+      </div>
+    </div>
+  );
 
+  return (
+    <PageCommon
+      banner={banner}
+    >
+      <div className={styles.container}>
         <h2 className={styles.h2Title}>Estatísticas da Profissão</h2>
 
         <CareerStats stats={profession.stats} />
