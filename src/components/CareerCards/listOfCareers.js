@@ -6,6 +6,7 @@ module.exports = [
     sttHard: 3,
     sttTime: 3,
     sttWork: 3,
+    linkTo: '/profissao/programador',
   },
   {
     slug: 'edicao-de-videos',
@@ -14,6 +15,7 @@ module.exports = [
     sttHard: 3,
     sttTime: 3,
     sttWork: 3,
+    linkTo: '/profissao/programador',
   },
   {
     slug: 'mundo-3d',
@@ -22,6 +24,7 @@ module.exports = [
     sttHard: 3,
     sttTime: 3,
     sttWork: 3,
+    linkTo: '/profissao/programador',
   },
   {
     slug: 'cozinheiro',
@@ -30,6 +33,7 @@ module.exports = [
     sttHard: 3,
     sttTime: 3,
     sttWork: 3,
+    linkTo: '/profissao/programador',
   },
   {
     slug: 'assistente-tecnologico',
@@ -38,5 +42,6 @@ module.exports = [
     sttHard: 3,
     sttTime: 3,
     sttWork: 3,
+    linkTo: '/profissao/programador',
   },
 ];

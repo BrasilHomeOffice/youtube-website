@@ -16,12 +16,17 @@ export default function FacebookComments({ uri }) {
         }}
       >Comentários</h3>
 
-      <div
-        className="fb-comments"
-        data-href={`${siteUrl(uri)}`}
-        data-width="625"
-        data-numposts="7"
-      ></div>
+      <div style={{
+        margin: 'auto',
+        maxWidth: 625,
+      }}>
+        <div
+          className="fb-comments"
+          data-href={`${siteUrl(uri)}`}
+          data-width="625"
+          data-numposts="7"
+        ></div>
+      </div>
     </div>
   );
 }
