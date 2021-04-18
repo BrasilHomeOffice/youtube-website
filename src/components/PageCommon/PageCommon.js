@@ -7,9 +7,7 @@ import styles from './PageCommon.module.scss'
 
 export default function PageCommon({ banner, children }) {
   return (
-    <PageBase>
-      {!!banner && banner}
-      
+    <PageBase banner={banner}>
       <div className={styles.container}>
         { children }
       </div>

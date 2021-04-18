@@ -3,8 +3,9 @@ import styles from './PageBase.module.scss'
 import { fbInit } from './facebook';
 import { useEffect } from 'react';
 import SiteHeader from '../SiteHeader/SiteHeader';
+import DesktopLeftMenu from '../DesktopLeftMenu/DesktopLeftMenu';
 
-export default function PageBase({ children }) {
+export default function PageBase({ banner, children }) {
   useEffect(() => {
     fbInit();
   }, []);
@@ -12,7 +13,15 @@ export default function PageBase({ children }) {
   return (
     <div className={styles.pageBase}>
       <SiteHeader />
-      {children}
+      {!!banner && banner}
+      <div className={styles.pageContainer}>
+        <div className={styles.leftMenu}>
+          <DesktopLeftMenu />
+        </div>
+        <div className={styles.pageContent}>
+          {children}
+        </div>
+      </div>
     </div>
   );
 }

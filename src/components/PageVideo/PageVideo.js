@@ -21,7 +21,9 @@ export default function PageVideo({
               description={vdescription}
             />
           </div>
-          <Sidebar />
+          <div className={styles.sidebar}>
+            <Sidebar />
+          </div>
           <div className={styles.content}>
             {children}
 
