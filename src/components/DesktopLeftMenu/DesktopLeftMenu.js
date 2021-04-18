@@ -6,7 +6,7 @@ import styles from './DesktopLeftMenu.module.scss'
 const mainMenus = [
   {
     label: 'Início',
-    linkTo: '#',
+    linkTo: '/',
     Icon: HomeOutlined,
   },
   {
@@ -16,12 +16,12 @@ const mainMenus = [
   },
   {
     label: 'Vídeos',
-    linkTo: '#',
+    linkTo: '/videos/apresentacao-brasil-home-office',
     Icon: OndemandVideoOutlined,
   },
   {
     label: 'Lista de Profissões',
-    linkTo: '#',
+    linkTo: '/carreiras-home-office',
     Icon: AssignmentIndOutlined,
   },
 ];
