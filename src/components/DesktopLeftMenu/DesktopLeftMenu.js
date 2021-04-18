@@ -11,7 +11,7 @@ const mainMenus = [
   },
   {
     label: 'Artigos',
-    linkTo: '#',
+    linkTo: '/artigos',
     Icon: PageviewOutlined,
   },
   {

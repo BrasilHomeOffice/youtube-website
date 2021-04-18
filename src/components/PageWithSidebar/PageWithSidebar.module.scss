@@ -1,0 +1,34 @@
+@import '../PageVideo/variables.scss';
+
+.container {
+  padding: 1rem 1rem 1rem 0;
+  max-width: $page-maxw;
+}
+
+.layout {
+  @media (min-width:$lg-minw) {
+    display: grid;
+    column-gap: 30px;
+    grid-template-columns: auto 300px;
+    grid-template-rows: max-content min-content;
+    background-color: #fff;
+    color: #444;
+    justify-items: stretch;
+  }
+}
+
+.sidebar {
+  @media (min-width:$lg-minw) {
+    grid-column: 2 / 3;
+    grid-row: 1;
+  }
+}
+
+.content {
+  @media (min-width:$lg-minw) {
+    grid-column: 1 / 2;
+    grid-row: 1;
+    justify-content: stretch;
+    align-content: stretch;
+  }
+}

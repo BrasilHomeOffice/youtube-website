@@ -1,0 +1,46 @@
+// Page size
+$page-maxw: 950px;
+
+.aContainer {
+  display: block;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  transition: .3s;
+  text-decoration: none;
+
+  &:hover, &:focus {
+    text-decoration: none;
+
+    .title {
+      // color: #666;
+      text-decoration: underline;
+    }
+    .excerpt {
+      color: #333;
+    }
+  }
+}
+
+.title {
+  display: block;
+  margin: 0;
+  padding-bottom: .3rem;
+  font-size: 18px;
+  font-weight: bold;
+  color: #4051B5;
+  transition: .3s;
+}
+
+.date {
+  display: block;
+  padding-bottom: .6rem;
+  font-size: 13.5px;
+  color: #888;
+}
+
+.excerpt {
+  display: block;
+  font-size: 16px;
+  color: #666;
+  transition: .3s;
+}
