@@ -13,7 +13,12 @@ export default function PageBase({ banner, children }) {
   return (
     <div className={styles.pageBase}>
       <SiteHeader />
-      {!!banner && banner}
+      {!!banner && (
+        <div className={styles.banner}>
+          {banner}
+        </div>
+      )}
+
       <div className={styles.pageContainer}>
         <div className={styles.leftMenu}>
           <DesktopLeftMenu />

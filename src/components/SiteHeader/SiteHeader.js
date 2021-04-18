@@ -20,9 +20,9 @@ export default function SiteHeader() {
           {/* <Button color="inherit">Login</Button> */}
         </Toolbar>
       </AppBar>
-      {/* <Alert severity="warning" variant="filled">
+      <Alert severity="error">
         Este site está em desenvolvimento. Previsão de lançamento: 01/06/2021
-      </Alert> */}
+      </Alert>
     </>
   )
 }

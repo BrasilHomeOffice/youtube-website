@@ -16,7 +16,7 @@ const mainMenus = [
   },
   {
     label: 'Vídeos',
-    linkTo: '/videos/apresentacao-brasil-home-office',
+    linkTo: '/videos',
     Icon: OndemandVideoOutlined,
   },
   {
