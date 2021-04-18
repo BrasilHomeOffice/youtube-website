@@ -5,12 +5,12 @@
 .menuItem {
   display: block;
   width: 100%;
-  color: #babcbf;
+  color: #737880;
   text-decoration: none;
-  padding: .2rem 0;
 
   &:hover, &:focus {
     text-decoration: none;
+    background: #dde;
 
     .menuIcon, .menuText, .menuText > span {
       text-decoration: none;
