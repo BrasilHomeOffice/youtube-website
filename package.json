@@ -6,9 +6,7 @@
     "dev": "next dev -p 80",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
-    "_start": "next start",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "_start": "next start"
   },
   "dependencies": {
     "@apollo/client": "^3.3.14",
@@ -27,11 +25,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.13.14",
-    "@storybook/addon-actions": "^6.2.3",
-    "@storybook/addon-essentials": "^6.2.3",
-    "@storybook/addon-links": "^6.2.3",
-    "@storybook/preset-scss": "^1.0.3",
-    "@storybook/react": "^6.2.3",
     "@svgr/webpack": "^5.5.0",
     "babel-loader": "^8.2.2",
     "babel-plugin-styled-components": "^1.12.0",
