@@ -1,0 +1,44 @@
+.container {
+  color: #444444;
+  background-color: #eee;
+  margin-bottom: 1px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  height: 20%;
+  border-bottom: 1px solid #ccc;
+  padding: 2% 1% 1% 1%;
+}
+
+.iconContainer, .contentContainer, .postContainer, .modificationsContainer {
+  height: 100%;
+  float: left;
+  padding: 0% 1% 1% 1%;
+}
+
+.iconContainer {
+  width: 10%;
+}
+
+.icon {
+  height: 100%;
+  width: 100%; 
+}
+
+.contentContainer {
+  width: 35%;
+  padding: 2% 0% 0% 0%;
+}
+
+.contentContainer p {
+  font-size: 0.8em;
+}
+
+.postContainer {
+  width: 20%;
+}
+
+.modificationsContainer {
+  width: 35%;
+  font-size: 0.8em; 
+  line-height: 19px;
+}
