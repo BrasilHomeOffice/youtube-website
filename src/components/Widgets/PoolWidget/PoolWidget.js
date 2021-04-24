@@ -38,6 +38,7 @@ const MUTATION_ANSWER_POOL = gql`
 `;
 
 export default function PoolWidget({ poolSlug }) {
+  return <></>;
   const { enqueueSnackbar } = useSnackbar();
   const isLoggedIn = useAuth(state => !!state.user.id);
 
